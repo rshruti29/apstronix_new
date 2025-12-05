@@ -21,6 +21,9 @@ interface SwiperCarouselProps {
   mobileViewClassName?: string;
   desktopViewClassname?: string;
   onIndexChange?: (index: number) => void;
+
+  // ⭐ ADD THIS LINE (FIXES YOUR BUILD ERROR)
+  isEventSection?: boolean;
 }
 
 export const SwiperCarousel: React.FC<SwiperCarouselProps> = ({
@@ -28,6 +31,7 @@ export const SwiperCarousel: React.FC<SwiperCarouselProps> = ({
   mobileViewClassName,
   desktopViewClassname,
   onIndexChange,
+  isEventSection, // ⭐ accept the new prop
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const swiperRef = useRef<SwiperRef | null>(null);
@@ -74,41 +78,12 @@ export const SwiperCarousel: React.FC<SwiperCarouselProps> = ({
             centeredSlides={true}
             loop={true}
             breakpoints={{
-              // 📱 EXTRA SMALL 320–360px
-              0: {
-                slidesPerView: 0.95,
-                spaceBetween: 6,
-              },
-
-              // 📱 375px screens (iPhone SE/11/12/13 mini)
-              360: {
-                slidesPerView: 1.05,
-                spaceBetween: 8,
-              },
-
-              // 📱 390–412px screens
-              390: {
-                slidesPerView: 1.15,
-                spaceBetween: 10,
-              },
-
-              // 📱 425px screens
-              425: {
-                slidesPerView: 1.2,
-                spaceBetween: 12,
-              },
-
-              // 📱 Tablets small
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 18,
-              },
-
-              // 💻 Medium/Large screens
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 28,
-              },
+              0: { slidesPerView: 0.95, spaceBetween: 6 },
+              360: { slidesPerView: 1.05, spaceBetween: 8 },
+              390: { slidesPerView: 1.15, spaceBetween: 10 },
+              425: { slidesPerView: 1.2, spaceBetween: 12 },
+              640: { slidesPerView: 2, spaceBetween: 18 },
+              768: { slidesPerView: 3, spaceBetween: 28 },
             }}
             className={isMobile ? mobileViewClassName : desktopViewClassname}
           >

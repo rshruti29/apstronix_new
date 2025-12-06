@@ -5,7 +5,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   const logos = [
-     { file: "NITR.png", alt: "NIT Rourkela" },
+    { file: "NITR.png", alt: "NIT Rourkela" },
     { file: "FTBI.png", alt: "FTBI" },
     { file: "STARTUP INDIA.png", alt: "Startup India" },
     { file: "DST NIDHI.png", alt: "DST NIDHI" },
@@ -20,12 +20,12 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mb-12">
 
           {/* Technical & Sales Queries */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
             <h3 className="text-2xl font-bold text-white tracking-tight">
               Technical & Sales Queries
             </h3>
 
-            <div className="space-y-4 text-left">
+            <div className="space-y-4">
               <a
                 href="tel:+917008717365"
                 className="block text-xl text-teal-300 hover:text-teal-200 transition font-medium"
@@ -38,21 +38,22 @@ function Footer() {
                   Apstronics Technologies Private Limited
                 </p>
 
-                {/* FIXED SPACING HERE */}
-                <div className="flex items-center gap-5">
+                {/* Increased icon gap */}
+                <div className="flex items-center justify-center md:justify-start gap-8">
                   <p>TI-103/B, TIIR Building,</p>
                   <a
                     href="https://www.youtube.com/@apstronix"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-red-500 hover:text-red-400 transition-transform hover:scale-110 flex-shrink-0 ml-2"
+                    className="text-red-500 hover:text-red-400 transition-transform hover:scale-110 flex-shrink-0"
                     aria-label="Apstronix YouTube Channel"
                   >
-                    <FaYoutube size={28} />
+                    <FaYoutube size={30} />
                   </a>
                 </div>
 
-                <p>NIT Rourkela, Rourkela,</p>
+                {/* Increased space from YouTube icon */}
+                <p className="mt-3">NIT Rourkela, Rourkela,</p>
                 <p>Odisha - 769008, India</p>
               </div>
             </div>
@@ -72,8 +73,8 @@ function Footer() {
           </div>
 
           {/* Supported By */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-white tracking-tight text-center md:text-left">
+          <div className="space-y-6 text-center md:text-left">
+            <h3 className="text-2xl font-bold text-white tracking-tight">
               Supported By
             </h3>
 
@@ -118,38 +119,3 @@ function Footer() {
 }
 
 export default Footer;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

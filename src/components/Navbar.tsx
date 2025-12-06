@@ -18,10 +18,7 @@ const navItems = [
   { label: "CAREER", path: "/career" },
   { label: "CONTACT US", path: "/contact" },
   { label: "OUR CLIENT", path: "#clients" },
-
-  // FIXED — changed from "/product" to "#products"
   { label: "PRODUCT", path: "#products" },
-
   { label: "SHOP", path: "/shop" },
 ];
 
@@ -57,7 +54,6 @@ export default function Navbar() {
             ring-1 ring-white/40
             rounded-[40px] px-4 md:px-8
 
-            /* --- MATCHED WIDTHS FROM SECOND NAVBAR --- */
             w-[95%] xs:w-[94%] sm:w-[92%] md:w-[90%] lg:w-[89%] xl:w-[86%] 2xl:w-[83%]
 
             h-[60px] md:h-[80px]
@@ -86,7 +82,7 @@ export default function Navbar() {
                   {item.path.startsWith("#") ? (
                     <button
                       onClick={() => handleSmoothScroll(item.path)}
-                      className="text-black text-sm lg:text-base font-light tracking-wide hover:text-purple-300 transition"
+                      className="text-black text-sm lg:text-base font-semibold tracking-wide hover:text-purple-300 transition"
                     >
                       {item.label}
                     </button>
@@ -94,7 +90,7 @@ export default function Navbar() {
                     <Link
                       href={item.path}
                       onClick={() => setIsMenuOpen(false)}
-                      className="text-black text-sm lg:text-base font-light tracking-wide hover:text-purple-300 transition"
+                      className="text-black text-sm lg:text-base font-semibold tracking-wide hover:text-purple-300 transition"
                     >
                       {item.label}
                     </Link>
@@ -145,7 +141,7 @@ export default function Navbar() {
                 <button
                   key={item.label}
                   onClick={() => handleSmoothScroll(item.path)}
-                  className="text-lg text-black font-light tracking-wide"
+                  className="text-lg text-black font-semibold tracking-wide"
                 >
                   {item.label}
                 </button>
@@ -154,7 +150,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-lg text-black font-light tracking-wide"
+                  className="text-lg text-black font-semibold tracking-wide"
                 >
                   {item.label}
                 </Link>
